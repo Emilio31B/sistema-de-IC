@@ -1,6 +1,6 @@
 import express =  require("express");
 import { Calculadora } from "./calculadora";
-const PORT = 3000
+const PORT = 3000 || process.env.PORT;
 
 /*class Calculadora{
     suma(num1 : number, num2 : number){
