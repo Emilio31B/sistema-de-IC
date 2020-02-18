@@ -1,6 +1,13 @@
 import express =  require("express");
-
+import { Calculadora } from "./calculadora";
 const PORT = 3000
+
+/*class Calculadora{
+    suma(num1 : number, num2 : number){
+        return num1 + num2;
+    };
+};*/
+
 
 let main = () =>
 {
@@ -17,8 +24,9 @@ let main = () =>
     app.get('/sumar', function(req: any, res : any){
         let op1 : string = req.query.op1
         let op2 : string = req.query.op2
+        let calculadora = new Calculadora();
         res.render('calculadora', {
-            suma : parseInt(op1) + parseInt(op2)
+            suma : calculadora.sumar(parseInt(op1), parseInt(op2))
         })
     })
 
